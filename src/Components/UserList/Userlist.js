@@ -19,7 +19,6 @@ function UserList({ onAddUser, onEditUser }) {
       .then(() => setUsers(users.filter((user) => user.id !== id)))
       .catch(() => setError("Failed to delete user."));
   };
-  console.log(users)
 
   return (
     <div>

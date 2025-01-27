@@ -1,29 +1,90 @@
 .user-form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  margin-top: 40px;
+  background-color: rgb(249, 218, 218);
+  width: 40%;
+  height: 60vh;
+  align-self: center;
+  border-radius: 20px;
  }
 .user-form label {
   display: flex;
+  margin-top: 15px;
+  margin-left: 15%;
+  margin-right: 15%;
+  min-width: 8%;
+  justify-content: space-between;
 }
 .user-form button {
-  margin-top: 10px;
+  margin: 10px;
+  height: 40px;
+  width: 110px;
+  background-color: rgb(177, 152, 152);
+  border-radius: 5px;
+  border-color: bisque;
+  color: rgb(255, 255, 255);
+  font-weight: 450;
+  font-size: 14px;
+
 }
 
 .button-container{
-  margin-top: 10%;
+  margin-top: 40px;
   display: flex;
-  flex-direction: row;
+  justify-content: center;
+  text-align: center;
 }
 
-.buttonSave{
-  margin: 20px;
-  background-color: rgb(54, 71, 202);
-  border-radius: 4px;
-  height: 7vh;
-  width: 50%;
-  color: white;
-  font-size: 15px;
+.label-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.user-form input{
+  height: 24px;
+  width: 200px;
+  border-radius: 3px;
+  border-color: rgb(184, 180, 180);
+  border-width: 1px;
+  margin-left: 40px;
+}
+
+.loading-screen {
+  margin: 200px;
+  margin-left: 35%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30%;
+  height: 50%;
+  background: rgb(247, 245, 245);
+  color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  flex-direction: column;
+  border-radius: 20px;
+}
+
+.spinner {
+  border: 4px solid rgba(255, 255, 255, 0.2);
+  border-top: 4px solid rgb(112, 109, 109);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
