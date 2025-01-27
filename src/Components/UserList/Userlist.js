@@ -5,6 +5,8 @@ import "./Userlist.css";
 function UserList({ onAddUser, onEditUser }) {
   const [users, setUsers] = useState([]);
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false); // Track loading state
+  const [successMessage, setSuccessMessage] = useState(""); // Success message state
 
   useEffect(() => {
     axios
@@ -14,15 +16,50 @@ function UserList({ onAddUser, onEditUser }) {
   }, []);
 
   const handleDelete = (id) => {
+    setLoading(true);
     axios
       .delete(`https://jsonplaceholder.typicode.com/users/${id}`)
-      .then(() => setUsers(users.filter((user) => user.id !== id)))
-      .catch(() => setError("Failed to delete user."));
+      .then(() => {
+        setUsers(users.filter((user) => user.id !== id));
+        setSuccessMessage("User successfully deleted!"); // Set success message
+        setLoading(false); // Hide loader
+
+        // Clear success message after a delay
+        setTimeout(() => {
+          setSuccessMessage(""); // Clear success message
+        }, 3000);
+      })
+      .catch(() => {
+        setError("Failed to delete user.");
+        setLoading(false); // Hide loader
+      });
   };
 
   return (
     <div>
-      {error && <p className="error">{error}</p>}
+      {/* Full-screen loader */}
+      {loading && (
+        <div className="loading-screen">
+          <div className="spinner"></div>
+          <p>Deleting User, please wait...</p>
+        </div>
+      )}
+
+      {/* Success message */}
+      {successMessage && (
+        <p className="success">
+          {successMessage}
+        </p>
+      )}
+
+      {/* Error message */}
+      {error && (
+        <p className="error">
+          {error}
+        </p>
+      )}
+
+      {/* User table */}
       <table className="user-table">
         <thead>
           <tr>
@@ -30,7 +67,7 @@ function UserList({ onAddUser, onEditUser }) {
             <th>Name</th>
             <th>Email</th>
             <th>Phone</th>
-            <th>Adress</th>
+            <th>Address</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -43,14 +80,28 @@ function UserList({ onAddUser, onEditUser }) {
               <td>{user.phone}</td>
               <td>{user.address.city}</td>
               <td>
-                <button onClick={() => onEditUser(user)} className="actionButton">Edit</button>
-                <button onClick={() => handleDelete(user.id)} className="actionButton">Delete</button>
+                <button
+                  onClick={() => onEditUser(user)}
+                  className="actionButton"
+                  disabled={loading} // Disable actions during loading
+                >
+                  Edit
+                </button>
+                <button
+                  onClick={() => handleDelete(user.id)}
+                  className="actionButton"
+                  disabled={loading} // Disable actions during loading
+                >
+                  Delete
+                </button>
               </td>
             </tr>
           ))}
         </tbody>
       </table>
-      <button onClick={onAddUser} className="addUser">Add User</button>
+      <button onClick={onAddUser} className="addUser" disabled={loading}>
+        Add User
+      </button>
     </div>
   );
 }

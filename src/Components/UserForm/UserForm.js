@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useState } from "react";
 import axios from "axios";
 import "./UserForm.css";
 
@@ -6,10 +6,10 @@ function UserForm({ user, onClose }) {
   const [formData, setFormData] = useState({
     name: user?.name || "",
     email: user?.email || "",
-    department: user?.department || "",
+    zipcode: user?.address.zipcode || "",
     phone: user?.phone || "",
-    city: user?.city || "",
-    company: user?.company || "",
+    city: user?.address.city || "",
+    company: user?.company.name || "",
   });
 
   const [loading, setLoading] = useState(false); // Track loading state
@@ -40,7 +40,7 @@ function UserForm({ user, onClose }) {
   };
 
   return (
-    <>  {/*Loading */}
+    <>  
       {loading && (
         <div className="loading-screen">
           <div className="spinner"></div>
@@ -74,11 +74,11 @@ function UserForm({ user, onClose }) {
           </label>
 
           <label>
-            Department:
+            Zipcode:
             <input
               type="text"
               name="department"
-              value={formData.department}
+              value={formData.zipcode}
               onChange={handleChange}
             />
           </label>
