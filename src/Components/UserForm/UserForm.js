@@ -56,6 +56,7 @@ function UserForm({ user, onClose }) {
             <input
               type="text"
               name="name"
+              placeholder="Enter name"
               value={formData.name}
               onChange={handleChange}
               required
@@ -67,6 +68,7 @@ function UserForm({ user, onClose }) {
             <input
               type="email"
               name="email"
+              placeholder="Enter Email Address"
               value={formData.email}
               onChange={handleChange}
               required
@@ -77,9 +79,11 @@ function UserForm({ user, onClose }) {
             Zipcode:
             <input
               type="text"
-              name="department"
+              name="zipcode"
+              placeholder="Enter ZipCode"
               value={formData.zipcode}
               onChange={handleChange}
+              required
             />
           </label>
 
@@ -87,9 +91,11 @@ function UserForm({ user, onClose }) {
             Phone:
             <input
               type="text"
-              name="phone" // Fixed casing for consistency
+              name="phone"
+              placeholder="Enter Phone number"
               value={formData.phone}
               onChange={handleChange}
+              required
             />
           </label>
 
@@ -97,9 +103,11 @@ function UserForm({ user, onClose }) {
             City:
             <input
               type="text"
-              name="city" // Fixed casing for consistency
+              name="city"
+              placeholder="Enter City name"
               value={formData.city}
               onChange={handleChange}
+              required
             />
           </label>
 
@@ -108,8 +116,10 @@ function UserForm({ user, onClose }) {
             <input
               type="text"
               name="company"
+              placeholder="Enter Compeny Name"
               value={formData.company}
               onChange={handleChange}
+              required
             />
           </label>
 
