@@ -1,0 +1,58 @@
+.user-table {
+    width: 80%;
+    border-collapse: collapse;
+    margin-left: 10%;
+  }
+  .user-table th, .user-table td {
+    border: 1px solid #c7c4c4;
+    padding: 8px;
+    text-align: left;
+  }
+  .user-table th {
+    background-color: #e8e2e2;
+  }
+
+  .actionButton{
+    height: 35px;
+    width: 80px;
+    margin: 10px;
+    background-color: rgb(48, 170, 194);
+    border-radius: 10px;
+    color: white;
+    border-color: #ddd;
+  }
+
+  .actionButton:Hover{
+    color: black;
+    background-color: rgb(238, 231, 231);
+    font-size: 15px;
+  }
+
+  .addUser:hover{
+    color: black;
+    background-color: rgb(238, 231, 231);
+    font-size: 15px;
+  }
+
+  .addUser{
+    margin: 10px;
+    height: 45px;
+    width: 150px;
+    margin: 10px;
+    background-color: #a4a59d;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    border-color: #ddd;
+    align-self: flex-start;
+  }
+
+
+tr:nth-child(odd) {
+  background-color: rgb(248, 253, 255);
+}
+
+
+tr:nth-child(even) {
+  background-color: rgb(249, 249, 238);
+}

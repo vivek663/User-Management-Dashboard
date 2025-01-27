@@ -1,0 +1,29 @@
+.user-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: space-around;
+  align-items: center;
+ }
+.user-form label {
+  display: flex;
+}
+.user-form button {
+  margin-top: 10px;
+}
+
+.button-container{
+  margin-top: 10%;
+  display: flex;
+  flex-direction: row;
+}
+
+.buttonSave{
+  margin: 20px;
+  background-color: rgb(54, 71, 202);
+  border-radius: 4px;
+  height: 7vh;
+  width: 50%;
+  color: white;
+  font-size: 15px;
+}
