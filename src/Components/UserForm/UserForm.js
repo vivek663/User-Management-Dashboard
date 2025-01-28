@@ -12,7 +12,7 @@ function UserForm({ user, onClose }) {
     company: user?.company.name || "",
   });
 
-  const [loading, setLoading] = useState(false); // Track loading state
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -21,7 +21,7 @@ function UserForm({ user, onClose }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setLoading(true); // Show loading spinner
+    setLoading(true);
 
     const apiCall = user
       ? axios.put(`https://jsonplaceholder.typicode.com/users/${user.id}`, formData)
@@ -30,12 +30,12 @@ function UserForm({ user, onClose }) {
     apiCall
       .then((response) => {
         console.log("Success:", response.data);
-        setLoading(false); // Hide loading spinner
+        setLoading(false);
         onClose();
       })
       .catch(() => {
         alert("Failed to save user. Try again.");
-        setLoading(false); // Hide loading spinner
+        setLoading(false);
       });
   };
 
@@ -56,7 +56,7 @@ function UserForm({ user, onClose }) {
             <input
               type="text"
               name="name"
-              placeholder="Enter name"
+              placeholder="Enter Name"
               value={formData.name}
               onChange={handleChange}
               required
@@ -86,7 +86,6 @@ function UserForm({ user, onClose }) {
               required
             />
           </label>
-
           <label>
             Phone:
             <input
@@ -124,7 +123,7 @@ function UserForm({ user, onClose }) {
           </label>
 
           <div className="button-container">
-            <button type="submit" className="buttonSave">Save</button>
+            <button type="submit">Save</button>
             <button type="button" onClick={onClose}>Cancel</button>
           </div>
         </form>

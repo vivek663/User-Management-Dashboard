@@ -44,6 +44,11 @@
   justify-content: space-around;
 }
 
+.user-form button:hover{
+  background-color: white;
+  color: black;
+}
+
 .user-form input{
   height: 24px;
   width: 200px;
@@ -61,7 +66,7 @@
   left: 0;
   width: 30%;
   height: 50%;
-  background: rgb(247, 245, 245);
+  background: rgb(218, 216, 216);
   color: rgb(0, 0, 0);
   display: flex;
   justify-content: center;

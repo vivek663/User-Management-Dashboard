@@ -4,12 +4,12 @@
     margin-left: 10%;
   }
   .user-table th, .user-table td {
-    border: 1px solid #c7c4c4;
+    border: 1px solid #aca5a5;
     padding: 8px;
     text-align: left;
   }
   .user-table th {
-    background-color: #e8e2e2;
+    background-color: #dfd7d7;
   }
 
   .actionButton{
@@ -29,9 +29,10 @@
   }
 
   .addUser:hover{
-    color: black;
-    background-color: rgb(238, 231, 231);
-    font-size: 15px;
+    color: rgb(24, 23, 23);
+    background-color: rgb(255, 255, 255);
+    font-size: 17px;
+    font-weight: 500;
   }
 
   .addUser{
@@ -39,9 +40,9 @@
     height: 45px;
     width: 150px;
     margin: 10px;
-    background-color: #a4a59d;
+    background-color: #333331;
     border-radius: 10px;
-    color: white;
+    color: rgb(255, 255, 255);
     font-size: 16px;
     border-color: #ddd;
     align-self: flex-start;

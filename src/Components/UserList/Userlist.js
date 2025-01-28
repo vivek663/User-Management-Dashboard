@@ -83,14 +83,14 @@ function UserList({ onAddUser, onEditUser }) {
                 <button
                   onClick={() => onEditUser(user)}
                   className="actionButton"
-                  disabled={loading} // Disable actions during loading
+                  disabled={loading}
                 >
                   Edit
                 </button>
                 <button
                   onClick={() => handleDelete(user.id)}
                   className="actionButton"
-                  disabled={loading} // Disable actions during loading
+                  disabled={loading}
                 >
                   Delete
                 </button>
